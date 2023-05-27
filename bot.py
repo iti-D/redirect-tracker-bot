@@ -5,10 +5,10 @@ from DB_handling import id_to_db, num_of_users, retrive_ids
 import time
 
 # Replace with your Telegram bot token
-bot = telebot.TeleBot('6299662195:AAGvVIZI3vw0tMG7D5UEdzrLwraG9UGVKoA')
+bot = telebot.TeleBot('TOKEN')
 
 # Replace with your Telegram user ID (you can get it by sending a message to @userinfobot)
-bot_owner_id = 390034852
+bot_owner_id = 111111
 
 # Counter for the number of link messages received
 link_count = 0
@@ -61,7 +61,7 @@ def handle_link(message):
 @bot.message_handler(commands=['send', 'stats'])
 def handle_owner_commands(message):
     global link_count
-    if message.from_user.id == 390034852:
+    if message.from_user.id == 1111111:
         if message.text.startswith('/stats'):
             the_stats = str(num_of_users()) + "\n Links count: " + str(link_count)
             bot.reply_to(message, the_stats)
